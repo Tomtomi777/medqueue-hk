@@ -1,0 +1,42 @@
+# Operating system
+.DS_Store
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+
+# Backend
+backend/target/
+backend/data/
+backend/HELP.md
+backend/src/main/resources/static/
+*.class
+
+# Database
+*.mv.db
+*.trace.db
+*.lock.db
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# IDE
+.vscode/
+.idea/
+*.iml
+
+# Temporary logs
+*.log
+
+# Release binaries
+*.jar
+*.jar.original
+release/data/
+MedQueue-HK-v*.zip

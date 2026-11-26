@@ -1,33 +1,42 @@
-HELP.md
-target/
-.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
 
-### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
+# macOS
+.DS_Store
 
-### IntelliJ IDEA ###
-.idea
-*.iws
-*.iml
-*.ipr
+# Python
+.venv/
+__pycache__/
+*.pyc
 
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
+# Frontend dependencies and build
+frontend/node_modules/
+frontend/dist/
 
-### VS Code ###
+# Java build
+backend/target/
+*.class
+
+# Generated frontend resources
+backend/src/main/resources/static/
+
+# Local database
+backend/data/
+*.trace.db
+*.lock.db
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# IDE configuration
 .vscode/
+.idea/
+*.iml
+
+# Logs
+*.log
+
+# Generated release binaries
+release/*.jar
+release/data/
+MedQueue-HK-v*.zip
