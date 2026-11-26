@@ -1,0 +1,569 @@
+
+/* ========================================
+   MEDQUEUE HK — THEME SYSTEM
+   ======================================== */
+
+:root {
+  --mq-bg: #f4f7f9;
+  --mq-surface: #ffffff;
+  --mq-surface-alt: #f4f7f9;
+  --mq-hover: #f5faf9;
+
+  --mq-text: #18333d;
+  --mq-muted: #647b86;
+  --mq-secondary: #526d7a;
+
+  --mq-border: #e0e8ec;
+  --mq-divider: #e5ecef;
+
+  --mq-accent: #168d83;
+  --mq-accent-soft: #e7f5f2;
+
+  --mq-blue: #426887;
+  --mq-blue-soft: #edf2f8;
+
+  --mq-info: #3e6c83;
+  --mq-info-bg: #edf5f9;
+  --mq-info-border: #d6e6ef;
+
+  --mq-error: #ad3535;
+  --mq-error-bg: #fff2f2;
+  --mq-error-border: #f2c9c9;
+
+  --mq-warning: #966318;
+
+  --mq-chart-grid: #e0e8ec;
+  --mq-chart-text: #71838d;
+  --mq-chart-median: #148f85;
+  --mq-chart-p95: #6295af;
+}
+
+/* Dark theme variables */
+
+:root[data-theme="dark"] {
+  --mq-bg: #0e1921;
+  --mq-surface: #192b35;
+  --mq-surface-alt: #14242e;
+  --mq-hover: #213a43;
+
+  --mq-text: #e5eef2;
+  --mq-muted: #a0b5bf;
+  --mq-secondary: #b2c6cf;
+
+  --mq-border: #2c424e;
+  --mq-divider: #304550;
+
+  --mq-accent: #5ed7ca;
+  --mq-accent-soft: #1e403f;
+
+  --mq-blue: #a1c8e3;
+  --mq-blue-soft: #23394a;
+
+  --mq-info: #a6cde0;
+  --mq-info-bg: #1c3341;
+  --mq-info-border: #355264;
+
+  --mq-error: #ffaaaa;
+  --mq-error-bg: #39252c;
+  --mq-error-border: #67404a;
+
+  --mq-warning: #f0c37b;
+
+  --mq-chart-grid: #304550;
+  --mq-chart-text: #a0b5bf;
+  --mq-chart-median: #5ed7ca;
+  --mq-chart-p95: #91b9ce;
+}
+
+/* Base appearance */
+
+html,
+body {
+  background: var(--mq-bg);
+  color: var(--mq-text);
+}
+
+.app-layout,
+.main-layout {
+  background: var(--mq-bg);
+}
+
+button,
+input,
+select,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--mq-accent);
+  outline-offset: 3px;
+}
+
+/* Header and theme control */
+
+.top-header {
+  background: var(--mq-surface);
+  border-color: var(--mq-border);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 4px;
+  border-radius: 9px;
+  background: var(--mq-surface-alt);
+  border: 1px solid var(--mq-border);
+}
+
+.theme-toggle button {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: none;
+  border-radius: 6px;
+  color: var(--mq-muted);
+  background: transparent;
+}
+
+.theme-toggle button.active {
+  background: var(--mq-surface);
+  color: var(--mq-accent);
+  box-shadow: 0 1px 5px #00000014;
+}
+
+.theme-toggle button:hover {
+  color: var(--mq-accent);
+}
+
+/* Main surfaces */
+
+.panel,
+.stat-card,
+.category-toolbar,
+.waiting-guide,
+.directory-card,
+.filter-panel,
+.chart-tooltip {
+  background: var(--mq-surface);
+  border-color: var(--mq-border);
+  color: var(--mq-text);
+}
+
+/* Primary typography */
+
+.page h1,
+.panel-heading h2,
+.breadcrumb strong,
+.stat-card h2,
+.category-toolbar strong,
+.guide-toggle-text strong,
+.triage-card strong,
+.filter-heading,
+.hospital-table .hospital-name,
+.directory-hospital-info h2,
+.directory-statistic-row strong,
+.hospital-option-info strong,
+.comparison-empty h2,
+.comparison-table .comparison-metric,
+.chart-tooltip h3,
+.history-single-record > strong {
+  color: var(--mq-text);
+}
+
+/* Secondary typography */
+
+.breadcrumb,
+.header-right,
+.page-heading p,
+.panel-heading p,
+.stat-card p,
+.stat-card-top,
+.data-information,
+.category-toolbar p,
+.guide-toggle-text span,
+.guide-content p,
+.table-view-label,
+.column-subtitle,
+.hospital-cluster,
+.table-footer,
+.table-explanation,
+.empty-state,
+.map-footer,
+.popup-address,
+.popup-caption,
+.directory-address,
+.directory-coordinates,
+.directory-disclaimer,
+.directory-footer,
+.directory-empty p,
+.hospital-option-info span,
+.comparison-empty p,
+.chart-explanation,
+.chart-tooltip-row,
+.history-period,
+.history-change-summary span,
+.history-table-footer,
+.history-empty p,
+.history-single-record p,
+.history-single-values span,
+.selection-limit-message {
+  color: var(--mq-muted);
+}
+
+/* Accent elements */
+
+.eyebrow,
+.stat-icon,
+.filter-heading svg,
+.guide-toggle,
+.guide-source,
+.directory-cluster,
+.directory-hospital-icon,
+.directory-details-button,
+.directory-directions,
+.comparison-empty-icon,
+.chart-tooltip-row strong,
+.history-single-values h2,
+.history-table-footer .text-button {
+  color: var(--mq-accent);
+}
+
+.stat-icon,
+.directory-hospital-icon,
+.comparison-empty-icon,
+.directory-directions {
+  background: var(--mq-accent-soft);
+}
+
+/* Secondary surfaces */
+
+.neutral-tag,
+.view-switch,
+.statistics-guide > div,
+.selected-hospitals,
+.selection-limit-message,
+.comparison-category,
+.analytics-category,
+.chart-hospital-key,
+.history-change-summary {
+  background: var(--mq-surface-alt);
+  color: var(--mq-muted);
+  border-color: var(--mq-border);
+}
+
+.view-switch button {
+  color: var(--mq-muted);
+}
+
+.view-switch button.active {
+  background: var(--mq-surface);
+  color: var(--mq-accent);
+}
+
+/* Inputs and buttons */
+
+.search-field,
+.select-field,
+.reset-filters-button {
+  background: var(--mq-surface);
+  border-color: var(--mq-border);
+  color: var(--mq-text);
+}
+
+.search-field input {
+  color: var(--mq-text);
+}
+
+.search-field input::placeholder {
+  color: var(--mq-muted);
+}
+
+.search-field svg,
+.clear-search-button {
+  color: var(--mq-muted);
+}
+
+.clear-search-button {
+  background: var(--mq-surface-alt);
+}
+
+.clear-search-button:hover {
+  background: var(--mq-border);
+  color: var(--mq-text);
+}
+
+.location-button,
+.export-button,
+.reset-filters-button {
+  color: var(--mq-accent);
+  border-color: var(--mq-border);
+}
+
+.location-button,
+.export-button {
+  background: var(--mq-accent-soft);
+}
+
+.location-button:hover,
+.export-button:hover:not(:disabled),
+.reset-filters-button:hover:not(:disabled),
+.directory-directions:hover {
+  background: var(--mq-hover);
+  border-color: var(--mq-accent);
+}
+
+.text-button {
+  color: var(--mq-muted);
+}
+
+.text-button:hover {
+  color: var(--mq-accent);
+}
+
+/* Notices and status */
+
+.notice,
+.guide-disclaimer {
+  background: var(--mq-info-bg);
+  border-color: var(--mq-info-border);
+  color: var(--mq-info);
+}
+
+.error-message {
+  background: var(--mq-error-bg);
+  color: var(--mq-error);
+  border-color: var(--mq-error-border);
+}
+
+.stat-card .location-error {
+  color: var(--mq-error);
+}
+
+.status-current,
+.change-decrease {
+  color: var(--mq-accent);
+}
+
+.status-warning,
+.change-increase {
+  color: var(--mq-warning);
+}
+
+.change-neutral {
+  color: var(--mq-muted);
+}
+
+/* Tables */
+
+.hospital-table th {
+  background: var(--mq-surface-alt);
+  color: var(--mq-muted);
+}
+
+.hospital-table td {
+  color: var(--mq-secondary);
+  border-color: var(--mq-divider);
+}
+
+.hospital-table tbody tr:hover {
+  background: var(--mq-hover);
+}
+
+.wait-value,
+.directory-wait.nonurgent {
+  background: var(--mq-accent-soft);
+  color: var(--mq-accent);
+}
+
+.urgent-value,
+.directory-wait.urgent {
+  background: var(--mq-blue-soft);
+  color: var(--mq-blue);
+}
+
+/* Guide */
+
+.guide-toggle:hover {
+  background: var(--mq-hover);
+}
+
+.guide-content,
+.triage-card {
+  border-color: var(--mq-border);
+}
+
+.statistics-guide strong {
+  color: var(--mq-accent);
+}
+
+/* Section borders */
+
+.explore-map-section,
+.explore-table-section,
+.directory-actions,
+.directory-expanded,
+.directory-statistic-row,
+.comparison-table-section,
+.history-table-section,
+.history-change-summary > div + div {
+  border-color: var(--mq-divider);
+}
+
+/* Hospital selection */
+
+.hospital-option,
+.selected-hospital-tag {
+  background: var(--mq-surface);
+  border-color: var(--mq-border);
+  color: var(--mq-text);
+}
+
+.hospital-option:hover:not(:disabled) {
+  background: var(--mq-hover);
+  border-color: var(--mq-accent);
+}
+
+.hospital-option.selected {
+  background: var(--mq-accent-soft);
+  border-color: var(--mq-accent);
+}
+
+.hospital-option-icon {
+  background: var(--mq-surface-alt);
+  color: var(--mq-muted);
+}
+
+.hospital-option.selected
+.hospital-option-icon,
+.selected-hospital-id,
+.chart-key-item > span,
+.comparison-column-id {
+  background: var(--mq-accent-soft);
+  color: var(--mq-accent);
+}
+
+.hospital-option-action,
+.selected-hospitals-heading .text-button {
+  color: var(--mq-accent);
+}
+
+.selected-hospitals-heading strong,
+.chart-key-item p,
+.analytics-field label,
+.analytics-category > span,
+.comparison-category > span {
+  color: var(--mq-secondary);
+}
+
+/* Recharts */
+
+.recharts-cartesian-grid line {
+  stroke: var(--mq-chart-grid);
+}
+
+.recharts-cartesian-axis-tick text {
+  fill: var(--mq-chart-text);
+}
+
+.recharts-legend-item-text {
+  color: var(--mq-text) !important;
+}
+
+/* Leaflet maps */
+
+.hospital-map {
+  border-color: var(--mq-border);
+  background: var(--mq-surface-alt);
+}
+
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+  background: var(--mq-surface);
+  color: var(--mq-text);
+}
+
+.leaflet-popup-content h3 {
+  color: var(--mq-text);
+}
+
+.popup-stat span {
+  color: var(--mq-muted);
+}
+
+.popup-stat strong,
+.popup-cluster {
+  color: var(--mq-accent);
+}
+
+.popup-divider {
+  background: var(--mq-divider);
+}
+
+.leaflet-bar a {
+  background: var(--mq-surface);
+  color: var(--mq-text);
+  border-color: var(--mq-border);
+}
+
+.leaflet-control-attribution {
+  background: var(--mq-surface) !important;
+  color: var(--mq-muted);
+}
+
+.leaflet-control-attribution a {
+  color: var(--mq-accent);
+}
+
+/* Dark appearance for existing map tiles */
+
+[data-theme="dark"] .leaflet-tile-pane {
+  filter: invert(100%)
+    hue-rotate(180deg)
+    brightness(85%)
+    contrast(90%);
+}
+
+/* Dark sidebar */
+
+[data-theme="dark"] .sidebar {
+  background: #0b151c;
+  border-right: 1px solid var(--mq-border);
+}
+
+[data-theme="dark"] .nav-link.active {
+  background: #1c3d42;
+}
+
+/* Mobile header */
+
+@media (max-width: 600px) {
+  .header-actions {
+    gap: 8px;
+  }
+
+  .theme-toggle button {
+    width: 26px;
+    height: 26px;
+  }
+
+  .breadcrumb {
+    gap: 7px;
+  }
+
+  .breadcrumb > span {
+    display: none;
+  }
+}

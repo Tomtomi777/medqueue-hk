@@ -1,0 +1,42 @@
+
+# macOS
+.DS_Store
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Frontend dependencies and build
+frontend/node_modules/
+frontend/dist/
+
+# Java build
+backend/target/
+*.class
+
+# Generated frontend resources
+backend/src/main/resources/static/
+
+# Local database
+backend/data/
+*.trace.db
+*.lock.db
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# IDE configuration
+.vscode/
+.idea/
+*.iml
+
+# Logs
+*.log
+
+# Generated release binaries
+release/*.jar
+release/data/
+MedQueue-HK-v*.zip

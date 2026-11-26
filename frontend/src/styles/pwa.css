@@ -1,0 +1,54 @@
+
+/* ========================================
+   MEDQUEUE HK — PWA
+   ======================================== */
+
+.offline-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+
+  background: var(--mq-surface-alt);
+  color: var(--mq-warning);
+
+  border-bottom: 1px solid var(--mq-border);
+
+  padding: 14px 24px;
+}
+
+.offline-banner svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.offline-banner strong {
+  font-size: 13px;
+}
+
+.offline-banner p {
+  margin-top: 5px;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .offline-banner {
+    padding: 12px 15px;
+  }
+
+  .offline-banner p {
+    font-size: 11px;
+  }
+}
+
+/* Installed application appearance */
+
+@media (display-mode: standalone) {
+  html {
+    overscroll-behavior-y: none;
+  }
+
+  .mobile-navigation {
+    box-shadow: none;
+  }
+}

@@ -1,0 +1,652 @@
+
+/* ========================================
+   MEDQUEUE HK — MOBILE EXPERIENCE
+   ======================================== */
+
+/* Hide mobile-only elements on desktop */
+
+.mobile-navigation,
+.mobile-brand {
+  display: none;
+}
+
+/* Tablet improvements */
+
+@media (max-width: 1100px) {
+  .main-content {
+    padding: 24px;
+  }
+
+  .stat-card {
+    min-width: 0;
+  }
+
+  .panel {
+    min-width: 0;
+  }
+}
+
+/* Mobile application layout */
+
+@media (max-width: 768px) {
+
+  /* Remove desktop sidebar */
+
+  .sidebar {
+    display: none;
+  }
+
+  .app-layout {
+    display: block;
+    min-height: 100dvh;
+  }
+
+  .main-layout {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .main-content {
+    padding: 18px 14px;
+
+    padding-bottom:
+      calc(100px + env(safe-area-inset-bottom, 0px));
+  }
+
+  /* Mobile header */
+
+  .top-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    height: auto;
+    min-height: 65px;
+
+    padding: 12px 15px;
+
+    padding-top:
+      calc(12px + env(safe-area-inset-top, 0px));
+
+    background: var(--mq-surface);
+    border-bottom: 1px solid var(--mq-border);
+  }
+
+  .breadcrumb,
+  .header-right {
+    display: none;
+  }
+
+  .mobile-brand {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+  }
+
+  .mobile-brand-icon {
+    width: 35px;
+    height: 35px;
+    flex-shrink: 0;
+
+    display: grid;
+    place-items: center;
+
+    background: #148f85;
+    color: white;
+    border-radius: 9px;
+  }
+
+  .mobile-brand strong {
+    color: var(--mq-text);
+    font-size: 16px;
+    letter-spacing: -0.5px;
+  }
+
+  .mobile-brand strong span {
+    color: var(--mq-accent);
+  }
+
+  .mobile-brand p {
+    color: var(--mq-muted);
+    font-size: 9px;
+    margin-top: 3px;
+  }
+
+  .header-actions {
+    gap: 5px;
+  }
+
+  .theme-toggle {
+    padding: 3px;
+    gap: 2px;
+  }
+
+  .theme-toggle button {
+    width: 29px;
+    height: 34px;
+  }
+
+  .theme-toggle button svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  /* Mobile bottom navigation */
+
+  .mobile-navigation {
+    display: grid;
+    grid-template-columns:
+      repeat(4, minmax(0, 1fr));
+
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    z-index: 1100;
+
+    background: var(--mq-surface);
+    border-top: 1px solid var(--mq-border);
+
+    padding: 7px 8px;
+
+    padding-bottom:
+      calc(8px + env(safe-area-inset-bottom, 0px));
+
+    box-shadow: 0 -4px 20px #00000008;
+  }
+
+  .mobile-nav-link {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+
+    min-height: 54px;
+    padding: 7px 3px;
+
+    color: var(--mq-muted);
+    border-radius: 9px;
+
+    font-size: 10px;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  .mobile-nav-link.active {
+    background: var(--mq-accent-soft);
+    color: var(--mq-accent);
+    font-weight: 700;
+  }
+
+  .mobile-nav-link:active {
+    opacity: 0.75;
+  }
+
+  /* Page typography */
+
+  .page-heading {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .page h1 {
+    font-size: 27px;
+    line-height: 1.2;
+  }
+
+  .eyebrow {
+    font-size: 9px;
+    letter-spacing: 1px;
+    margin-bottom: 9px;
+  }
+
+  .page-heading p {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  .page-heading .primary-button {
+    padding: 10px 12px;
+    min-height: 42px;
+    font-size: 11px;
+  }
+
+  .page-heading .primary-button svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  /* Data information */
+
+  .data-information {
+    font-size: 10px;
+    gap: 8px 12px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+
+  /* Two-column summary cards */
+
+  .stats-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .stat-card {
+    padding: 14px;
+    border-radius: 11px;
+    min-width: 0;
+  }
+
+  .stat-card-top {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 11px;
+    line-height: 1.4;
+  }
+
+  .stat-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+  }
+
+  .stat-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .stat-card h2 {
+    font-size: 23px;
+    line-height: 1.25;
+    margin-top: 10px;
+    letter-spacing: -0.6px;
+  }
+
+  .stat-card p {
+    font-size: 10px;
+    line-height: 1.6;
+  }
+
+  .stat-card-action {
+    padding-top: 12px;
+  }
+
+  .location-button {
+    min-height: 38px;
+    font-size: 10px;
+    padding: 8px;
+  }
+
+  .location-actions {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  /* Cards and panels */
+
+  .panel,
+  .explore-panel {
+    padding: 16px;
+    border-radius: 11px;
+    margin-bottom: 18px;
+  }
+
+  .panel-heading {
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+
+  .panel-heading h2 {
+    font-size: 17px;
+    line-height: 1.4;
+  }
+
+  .panel-heading p {
+    font-size: 11px;
+    line-height: 1.5;
+  }
+
+  .neutral-tag {
+    font-size: 10px;
+    padding: 6px 8px;
+    white-space: normal;
+  }
+
+  /* Category controls */
+
+  .category-toolbar {
+    padding: 14px;
+    margin-bottom: 18px;
+  }
+
+  .category-toolbar .view-switch,
+  .analytics-category .view-switch,
+  .comparison-category .view-switch {
+    width: 100%;
+  }
+
+  .view-switch button {
+    flex: 1;
+    min-height: 38px;
+    font-size: 11px;
+    padding: 8px;
+    line-height: 1.4;
+  }
+
+  /* Information notices */
+
+  .notice {
+    padding: 13px;
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+
+  .notice strong {
+    font-size: 12px;
+  }
+
+  .notice p {
+    font-size: 11px;
+    line-height: 1.7;
+  }
+
+  .waiting-guide {
+    margin-bottom: 18px;
+  }
+
+  /* Touch-friendly filtering controls */
+
+  .toolbar {
+    gap: 10px;
+  }
+
+  .search-field,
+  .select-field,
+  .reset-filters-button {
+    min-height: 44px;
+  }
+
+  .search-field input {
+    font-size: 16px;
+  }
+
+  .select-field {
+    font-size: 16px;
+    max-width: 100%;
+  }
+
+  .clear-search-button {
+    width: 28px;
+    height: 28px;
+  }
+
+  /* Hospital map */
+
+  .hospital-map {
+    height: 340px;
+    width: 100%;
+  }
+
+  .map-footer {
+    font-size: 10px;
+    line-height: 1.6;
+  }
+
+  #hospital-map-section {
+    scroll-margin-top: 85px;
+  }
+
+  .hospital-popup {
+    min-width: 160px;
+  }
+
+  .leaflet-popup-content {
+    margin: 12px 15px;
+  }
+
+  /* Hospital tables */
+
+  .table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .hospital-table {
+    font-size: 11px;
+  }
+
+  .hospital-table th {
+    font-size: 10px;
+    padding: 11px 9px;
+    white-space: normal;
+    line-height: 1.5;
+  }
+
+  .hospital-table td {
+    padding: 13px 9px;
+  }
+
+  .hospital-table .hospital-name {
+    min-width: 145px;
+  }
+
+  .hospital-cluster {
+    font-size: 9px;
+    line-height: 1.5;
+  }
+
+  .wait-value,
+  .urgent-value {
+    display: inline-block;
+    padding: 5px 7px;
+  }
+
+  /* Hospital directory */
+
+  .directory-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .directory-card {
+    padding: 16px;
+  }
+
+  .directory-hospital-info h2 {
+    font-size: 16px;
+  }
+
+  .directory-details-button,
+  .directory-directions {
+    min-height: 40px;
+  }
+
+  /* Comparison */
+
+  .hospital-selection-grid {
+    max-height: 300px;
+  }
+
+  .hospital-option {
+    min-height: 65px;
+  }
+
+  .comparison-category,
+  .analytics-category {
+    padding: 12px;
+  }
+
+  .comparison-table th {
+    min-width: 140px;
+  }
+
+  /* Analytics */
+
+  .history-change-summary {
+    padding: 13px;
+  }
+
+  .history-change-summary h3 {
+    font-size: 18px;
+  }
+
+  .export-button {
+    min-height: 40px;
+  }
+
+  .history-chart,
+  .comparison-chart {
+    font-size: 11px;
+  }
+
+  /* Prevent text clipping */
+
+  .stat-card,
+  .directory-card,
+  .hospital-option-info,
+  .analytics-field,
+  .selected-hospital-tag {
+    overflow-wrap: anywhere;
+  }
+}
+
+/* Extra small phones */
+
+@media (max-width: 360px) {
+
+  .main-content {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .mobile-brand strong {
+    font-size: 14px;
+  }
+
+  .mobile-brand p {
+    font-size: 8px;
+  }
+
+  .mobile-brand-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .page h1 {
+    font-size: 23px;
+  }
+
+  .stat-card {
+    padding: 11px;
+  }
+
+  .stat-card h2 {
+    font-size: 20px;
+  }
+
+  .mobile-nav-link {
+    font-size: 9px;
+  }
+}
+
+/* Respect accessibility preferences */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+.mobile-map-hint {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .desktop-map-hint {
+    display: none;
+  }
+
+  .mobile-map-hint {
+    display: inline;
+  }
+}
+
+/* Floating mobile refresh button */
+
+@media (max-width: 768px) {
+  .page-heading > .primary-button {
+    position: fixed;
+
+    right: 18px;
+
+    bottom:
+      calc(88px + env(safe-area-inset-bottom, 0px));
+
+    z-index: 1050;
+
+    width: 50px;
+    height: 50px;
+
+    min-height: 50px;
+    padding: 0;
+
+    border-radius: 50%;
+
+    font-size: 0;
+    gap: 0;
+
+    background: #148f85;
+    color: white;
+
+    box-shadow: 0 4px 16px #00000030;
+  }
+
+  .page-heading > .primary-button svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .page-heading > .primary-button:active {
+    transform: scale(0.94);
+  }
+
+  .page-heading > div {
+    width: 100%;
+  }
+
+  .main-content {
+    padding-bottom:
+      calc(155px + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+.theme-toggle .mobile-system-icon {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .theme-toggle .desktop-system-icon {
+    display: none;
+  }
+
+  .theme-toggle .mobile-system-icon {
+    display: block;
+  }
+}
